@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0d12;
+  --panel: #111827;
+  --panel-strong: #171d2d;
+  --ink: #f4f4f5;
+  --muted: #c4c9d8;
+  --accent: #ff9f43;
+  --mint: #7ef9a6;
+  --violet: #8b5cf6;
+  --rose: #ff5ea8;
+  --line: rgba(255,255,255,0.08);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(139, 92, 246, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(126, 249, 166, 0.15), transparent 30%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(255, 159, 67, 0.5);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), monospace;
+  }
+
+  .pixel-border {
+    border: 3px solid rgba(255,255,255,0.1);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.35);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .shadow-pixel {
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08), 8px 8px 0 rgba(23, 29, 45, 0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
